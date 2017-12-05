@@ -1,0 +1,14 @@
+msgid "News"
+msgstr "お知らせ"
+
+msgid "News Category"
+msgstr "カテゴリ"
+
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+msgid "Website Admin Title"
+msgstr "ウェブサイト管理"
+
+msgid "Website Title"
+msgstr "ウェブサイト"
