@@ -1,8 +1,12 @@
 # CakeNews plugin for CakePHP
 
-version 2017.11.30.00
+version 2017.12.19.00
 
 ## 更新履歴
+
+2017.12.19.00 ネームスペースの修正
+
+2017.12.05.00 src/Model/Entity/Menu.phpとsrc/Template/Menus/add.ctpを修正
 
 2017.11.30.00 定数用のconfig/const.phpを追加
 

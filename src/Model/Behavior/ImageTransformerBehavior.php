@@ -1,5 +1,5 @@
 <?php
-namespace CakeNews\Model\Behavior;
+namespace CakePG\CakeNews\Model\Behavior;
 
 use Cake\ORM\Behavior;
 

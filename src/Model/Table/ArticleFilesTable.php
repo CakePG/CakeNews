@@ -1,5 +1,5 @@
 <?php
-namespace CakeNews\Model\Table;
+namespace CakePG\CakeNews\Model\Table;
 
 use Cake\ORM\Table;
 use Cake\ORM\Query;

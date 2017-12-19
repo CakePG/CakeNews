@@ -17,6 +17,6 @@ class ArticleFile extends Entity
     }
     protected function _getAssetUrl()
     {
-        return ASSETS.str_replace(STORAGE, '', $this->dir.$this->file);
+        return $this->dir ? ASSETS.str_replace(STORAGE, '', $this->dir.$this->file) : null;
     }
 }
