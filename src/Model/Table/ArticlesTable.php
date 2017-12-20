@@ -12,11 +12,11 @@ class ArticlesTable extends Table
     {
         $this->addBehavior('Timestamp');
         $this->belongsTo('ArticleCategories', [
-              'className' => 'CakeNews.ArticleCategories'
+              'className' => 'CakePG/CakeNews.ArticleCategories'
             ])
             ->setForeignKey('article_category_id');
         $this->hasMany('ArticleFiles', [
-              'className' => 'CakeNews.ArticleFiles'
+              'className' => 'CakePG/CakeNews.ArticleFiles'
             ])
             ->setForeignKey('article_id')
             ->setDependent(false);
@@ -40,7 +40,7 @@ class ArticlesTable extends Table
     }
     public function validationDefault(Validator $validator)
     {
-        if (Configure::read('CakeNews.enables.category')) {
+        if (Configure::read('CakePG/CakeNews.enables.category')) {
           $validator
             ->notEmpty('article_category_id')
             ->numeric('article_category_id')

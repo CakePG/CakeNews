@@ -10,9 +10,9 @@ class ArticleCategoriesTable extends Table
     public function initialize(array $config)
     {
         $this->addBehavior('Timestamp');
-        $this->addBehavior('CakeNews.SortPriority');
+        $this->addBehavior('CakePG/CakeNews.SortPriority');
         $this->hasMany('Articles', [
-              'className' => 'CakeNews.Articles'
+              'className' => 'CakePG/CakeNews.Articles'
             ])
             ->setForeignKey('article_category_id')
             ->setDependent(false);

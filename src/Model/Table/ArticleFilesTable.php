@@ -11,7 +11,7 @@ class ArticleFilesTable extends Table
 {
     public function initialize(array $config)
     {
-        $this->addBehavior('CakeNews.ImageTransformer');
+        $this->addBehavior('CakePG/CakeNews.ImageTransformer');
         $this->addBehavior('Josegonzalez/Upload.Upload', [
             'file' => [
                 'nameCallback' => function(array $data, array $opts) {
@@ -48,7 +48,7 @@ class ArticleFilesTable extends Table
             ],
         ]);
         $this->belongsTo('Articles', [
-              'className' => 'CakeNews.Articles'
+              'className' => 'CakePG/CakeNews.Articles'
             ])
             ->setForeignKey('article_id')
             ->setJoinType('INNER');
