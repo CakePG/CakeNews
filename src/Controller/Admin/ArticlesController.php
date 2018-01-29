@@ -18,7 +18,7 @@ class ArticlesController extends AppController
     {
         $articles = $this->paginate($this->Articles, [
             'contain' => ['ArticleCategories'],
-            'order' => ['published_at' => 'desc'],
+            'order' => ['published_at' => 'desc', 'Articles.id' => 'desc'],
             'sortWhitelist' => ['title','published', 'published_at', 'ArticleCategories.priority'],
             'finder' => [
                 'search' => ['search' => $this->request->query]

@@ -1,8 +1,10 @@
 # CakeNews plugin for CakePHP
 
-version 2017.12.20.00
+version 2018.01.29.00
 
 ## 更新履歴
+
+2018.01.29.00 表示用のコンポーネントを追加
 
 2017.12.20.00 ネームスペースの修正
 
@@ -26,7 +28,7 @@ version 2017.12.20.00
 下記のコンフィグに一行追加して読み込みます。
 config/bootstrap.php
 ```
-Plugin::load('CakePG\\CakeNews', ['bootstrap' => true, 'routes' => true]);
+Plugin::load('CakePG/CakeNews', ['bootstrap' => true, 'routes' => true]);
 ```
 
 `composer.json`に下記のを追記
