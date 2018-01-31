@@ -2,28 +2,7 @@
 
 version 2018.01.29.00
 
-## 更新履歴
-
-2018.01.29.00 表示用のコンポーネントを追加
-
-2017.12.20.00 ネームスペースの修正
-
-2017.12.05.00 src/Model/Entity/Menu.phpとsrc/Template/Menus/add.ctpを修正
-
-2017.11.30.00 定数用のconfig/const.phpを追加
-
-2017.11.28.00 作成時に順序が最後になるように修正。
-
-2017.11.25.00 削除のエラーとソートの順番表示を修正。
-
-2017.11.23.00 アップロードしたファイルが傾く問題を修正。
-
-2017.11.20.00 お知らせ機能作成。
-
-
-## 手動インストール
-
-手動でファイル一式をpluginsに保存します。
+## インストール
 
 下記のコンフィグに一行追加して読み込みます。
 config/bootstrap.php
@@ -43,7 +22,7 @@ Plugin::load('CakePG/CakeNews', ['bootstrap' => true, 'routes' => true]);
 ],
 ```
 
-その後キャッシュをクリア
+キャッシュをクリア
 ```
 docker-compose run --rm php php composer.phar dumpautoload
 ```
@@ -64,3 +43,21 @@ Configure::load("news");
 #### 文言を変更する場合
 `vendor/CakePG/CakeNews/src/Locale/ja_JP/cakenews.po`の内容を以下のファイルに追加してください。
 `src/Locale/ja_JP/cakenews.po`（ない場合は作成）
+
+## 更新履歴
+
+2018.01.29.00 表示用のコンポーネントを追加
+
+2017.12.20.00 ネームスペースの修正
+
+2017.12.05.00 src/Model/Entity/Menu.phpとsrc/Template/Menus/add.ctpを修正
+
+2017.11.30.00 定数用のconfig/const.phpを追加
+
+2017.11.28.00 作成時に順序が最後になるように修正。
+
+2017.11.25.00 削除のエラーとソートの順番表示を修正。
+
+2017.11.23.00 アップロードしたファイルが傾く問題を修正。
+
+2017.11.20.00 お知らせ機能作成。
