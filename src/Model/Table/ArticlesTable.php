@@ -19,7 +19,7 @@ class ArticlesTable extends Table
               'className' => 'CakePG/CakeNews.ArticleFiles'
             ])
             ->setForeignKey('article_id')
-            ->setDependent(false);
+            ->setDependent(true);
 
         // search
         $this->addBehavior('Search.Search');

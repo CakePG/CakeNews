@@ -1,6 +1,6 @@
 # CakeNews plugin for CakePHP
 
-version 2018.01.29.00
+version 2018.02.10.00
 
 ## インストール
 
@@ -45,6 +45,8 @@ Configure::load("news");
 `src/Locale/ja_JP/cakenews.po`（ない場合は作成）
 
 ## 更新履歴
+
+2018.02.10.00 ニュース削除時にニュースファイルを削除するように修正
 
 2018.01.29.00 表示用のコンポーネントを追加
 
