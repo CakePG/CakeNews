@@ -52,7 +52,7 @@ Configure::load("news");
 
 2017.12.20.00 ネームスペースの修正
 
-2017.12.05.00 src/Model/Entity/Menu.phpとsrc/Template/Menus/add.ctpを修正
+2017.12.05.00 src/Model/Entity/ArticleFile.phpを修正
 
 2017.11.30.00 定数用のconfig/const.phpを追加
 
