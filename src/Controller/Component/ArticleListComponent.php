@@ -2,6 +2,8 @@
 namespace CakePG\CakeNews\Controller\Component;
 
 use Cake\Controller\Component;
+use Cake\Core\Configure;
+use Cake\I18n\Time;
 
 class ArticleListComponent extends Component
 {
@@ -14,9 +16,14 @@ class ArticleListComponent extends Component
 
     public function getArticles($limit = null)
     {
+        if (Configure::read('CakeNews.can_reserve')) {
+          $conditions = ['published' => true, 'published_at <=' => Time::now()];
+        } else {
+          $conditions = ['published' => true];
+        }
         $this->controler->loadModel('CakePG/CakeNews.Articles');
         return $this->controler->Articles->find('all' , [
-            'conditions' => ['published' => true],
+            'conditions' => $conditions,
             'contain' => ['ArticleCategories', 'ArticleFiles'],
             'order' => ['published_at' => 'desc', 'Articles.id' => 'desc'],
             'limit' => $limit
@@ -25,9 +32,14 @@ class ArticleListComponent extends Component
 
     public function getPaginateArticles($limit = 10)
     {
+        if (Configure::read('CakeNews.can_reserve')) {
+          $conditions = ['published' => true, 'published_at <=' => Time::now()];
+        } else {
+          $conditions = ['published' => true];
+        }
         $this->controler->loadModel('CakePG/CakeNews.Articles');
         return $articles = $this->controler->paginate($this->controler->Articles, [
-            'conditions' => ['published' => true],
+            'conditions' => $conditions,
             'contain' => ['ArticleCategories', 'ArticleFiles'],
             'order' => ['published_at' => 'desc', 'Articles.id' => 'desc'],
             'limit' => $limit

@@ -39,8 +39,8 @@
         <dd><?= h($article->article_category->name) ?></dd>
         <?php endif; ?>
 
-        <dt>公開日</dt>
-        <dd><?= h($article->published_at->format('Y年m月d日')) ?></dd>
+        <dt><?= $canReserve ? '公開日付' : '日付' ?></dt>
+        <dd><?= h($article->published_at->format('Y年m月d日 H時i分')) ?></dd>
 
         <dt>タイトル</dt>
         <dd><?= h($article->title) ?></dd>

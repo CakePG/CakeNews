@@ -60,7 +60,7 @@
           <td class="ids"><?= $article->published_msg ?></td>
           <?php if ($enables['category']): ?><td class="d-none d-md-table-cell"><?= h($article->article_category->name) ?></td><?php endif; ?>
           <td><?= h($article->title) ?></td>
-          <td class="d-none d-md-table-cell"><?= h($article->published_at->format('Y年m月d日')) ?></td>
+          <td class="d-none d-md-table-cell"><?= h($article->published_at->format('Y年m月d日 H時i分')) ?></td>
           <td class="actions">
             <?= $this->Html->link('<i class="fa fa-eye" aria-hidden="true"></i>詳細', ['action' => 'view', $article->id]+$this->request->query, ['escape' => false]) ?>
             <?= $this->Html->link('<i class="fa fa-pencil" aria-hidden="true"></i>編集', ['action' => 'edit', $article->id]+$this->request->query, ['escape' => false]) ?>

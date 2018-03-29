@@ -40,7 +40,7 @@ class ArticlesTable extends Table
     }
     public function validationDefault(Validator $validator)
     {
-        if (Configure::read('CakePG/CakeNews.enables.category')) {
+        if (Configure::read('CakeNews.enables.category')) {
           $validator
             ->notEmpty('article_category_id')
             ->numeric('article_category_id')
@@ -60,7 +60,7 @@ class ArticlesTable extends Table
             ->allowEmpty('author')
 
             ->notEmpty('published_at')
-            ->date('published_at', 'ymd', '日付は「yyyy-mm-dd」の形式で入力して下さい。')
+            ->datetime('published_at', 'ymd', '日付は「yyyy-mm-dd hh:mm」の形式で入力して下さい。')
             ->requirePresence('published_at', 'create')
 
             ->notEmpty('published')

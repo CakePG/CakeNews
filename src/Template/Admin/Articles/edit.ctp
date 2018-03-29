@@ -34,7 +34,8 @@
       <?php
         echo $this->Form->control('published', ['type' => 'checkbox', 'default' => true, 'label' => '公開する']);
         if ($enables['category']) echo $this->Form->control('article_category_id',['label' => 'カテゴリ', 'class' => 'form-control']);
-        echo $this->Form->control('published_at',['label' => '公開日', 'default' => date('Y-m-d'), 'type' => 'text', 'class' => 'form-control flatpickr']);
+        if ($canReserve) echo '<p class="offset-md-3 col-md-9">公開日付に未来の時間を入れることで公開予約ができます。</p>';
+        echo $this->Form->control('published_at',['label' => $canReserve ? '公開日付' : '日付', 'default' => date('Y-m-d H:i'), 'type' => 'text', 'class' => 'form-control flattimepickr']);
         echo $this->Form->control('title',['label' => 'タイトル', 'class' => 'form-control']);
         if ($enables['author']) echo $this->Form->control('author',['label' => '投稿者', 'default' => $auth->user('last_name'), 'class' => 'form-control']);
         echo $this->Form->control('body',['label' => '内容', 'class' => 'form-control', 'rows' => 10]);

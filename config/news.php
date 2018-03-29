@@ -4,6 +4,7 @@ use Cake\Core\Configure;
 $config = [
   'CakeNews' => [
     'dashboard_path' => '/admin',
+    'can_reserve' => false,
     'enables' => [
       'category' => true,
       'author' => true,

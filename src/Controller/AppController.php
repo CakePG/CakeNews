@@ -11,5 +11,6 @@ class AppController extends BaseController
         parent::beforeFilter($event);
         $this->set('dashboardPath', Configure::read('CakeNews.dashboard_path'));
         $this->set('enables', Configure::read('CakeNews.enables'));
+        $this->set('canReserve', Configure::read('CakeNews.can_reserve'));
     }
 }
