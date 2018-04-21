@@ -30,7 +30,7 @@
       </nav>
     </div>
     <div class="card-body">
-      <?= $this->Form->create($article, ['type' => 'file', 'templates' => 'app_form_bootstrap']); ?>
+      <?= $this->Form->create($article, ['type' => 'file', 'templates' => 'app_form_bootstrap', 'class' => 'form-img-preview']); ?>
       <?php
         echo $this->Form->control('published', ['type' => 'checkbox', 'default' => true, 'label' => '公開する']);
         if ($enables['category']) echo $this->Form->control('article_category_id',['label' => 'カテゴリ', 'class' => 'form-control']);
