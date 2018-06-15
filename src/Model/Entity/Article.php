@@ -23,4 +23,11 @@ class Article extends Entity
         '<span class="badge badge-success">'.$publishStatuses[$this->published].'</span>' :
         '<span class="badge badge-danger">'.$publishStatuses[$this->published].'</span>';
     }
+
+    protected function _getHtmlA()
+    {
+        $html = h($this->body);
+        $html = preg_replace('{(https?://[-_.!~*\'()a-zA-Z0-9;/?:@&=+$,%#]+)}', '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>', $html);
+        return nl2br($html);
+    }
 }

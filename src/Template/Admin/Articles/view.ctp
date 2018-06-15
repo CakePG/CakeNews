@@ -51,7 +51,7 @@
         <?php endif; ?>
 
         <dt>内容</dt>
-        <dd><?= nl2br(h($article->body)) ?></dd>
+        <dd><?= $article->html_a ?></dd>
 
         <?php if ($enables['upload']): ?>
         <dt>添付ファイル</dt>
