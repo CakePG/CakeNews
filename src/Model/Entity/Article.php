@@ -29,7 +29,8 @@ class Article extends Entity
         $html = h($this->body);
         $html = preg_replace_callback('{(https?://[-_.!~*\'()a-zA-Z0-9;/?:@&=+$,%#]+)}',
           function ($matches) {
-              if (strpos($matches[0], $_SERVER["HTTP_HOST"]) !== false) {
+              $domain = substr($_SERVER["HTTP_HOST"], 0, 4) == 'www.' ? ltrim($_SERVER["HTTP_HOST"], 'www.') : $_SERVER["HTTP_HOST"];
+              if (strpos($matches[0], $domain) !== false) {
                 return '<a href="'.$matches[0].'">'.$matches[0].'</a>';
               }
               else {
