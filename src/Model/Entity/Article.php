@@ -27,7 +27,15 @@ class Article extends Entity
     protected function _getHtmlA()
     {
         $html = h($this->body);
-        $html = preg_replace('{(https?://[-_.!~*\'()a-zA-Z0-9;/?:@&=+$,%#]+)}', '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>', $html);
+        $html = preg_replace_callback('{(https?://[-_.!~*\'()a-zA-Z0-9;/?:@&=+$,%#]+)}',
+          function ($matches) {
+              if (strpos($matches[0], $_SERVER["HTTP_HOST"]) !== false) {
+                return '<a href="'.$matches[0].'">'.$matches[0].'</a>';
+              }
+              else {
+                return '<a href="'.$matches[0].'" target="_blank" rel="noopener noreferrer">'.$matches[0].'</a>';
+              }
+          }, $html);
         return nl2br($html);
     }
 }
